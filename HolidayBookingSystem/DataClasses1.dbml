@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="kc9379m" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql-server;Initial Catalog=kc9379m;User ID=kc9379m" SettingsObjectName="HolidayBookingSystem.Properties.Settings" SettingsPropertyName="kc9379mConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.cpRole" Member="cpRoles">
+    <Type Name="cpRole">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roleName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="cpRole_cpUser" Member="cpUsers" ThisKey="RoleID" OtherKey="RoleID" Type="cpUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cpHolidayRequest" Member="cpHolidayRequests">
+    <Type Name="cpHolidayRequest">
+      <Column Name="HolidayRequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="startDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="endDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="cpUser_cpHolidayRequest" Member="cpUser" ThisKey="UserID" OtherKey="UserID" Type="cpUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cpHolidayEntitlement" Member="cpHolidayEntitlements">
+    <Type Name="cpHolidayEntitlement">
+      <Column Name="HolidayEntitlementID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="holidayEntitlement" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="holidayTaken" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="holidayRemaining" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="holidayDuringPeakTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="cpUser_cpHolidayEntitlement" Member="cpUser" ThisKey="UserID" OtherKey="UserID" Type="cpUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cpDepartment" Member="cpDepartments">
+    <Type Name="cpDepartment">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="departmentName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="cpDepartment_cpUser" Member="cpUsers" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="cpUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cpUser" Member="cpUsers">
+    <Type Name="cpUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="forename" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="phoneNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="dateJoined" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="cpUser_cpHolidayRequest" Member="cpHolidayRequests" ThisKey="UserID" OtherKey="UserID" Type="cpHolidayRequest" />
+      <Association Name="cpUser_cpHolidayEntitlement" Member="cpHolidayEntitlements" ThisKey="UserID" OtherKey="UserID" Type="cpHolidayEntitlement" />
+      <Association Name="cpDepartment_cpUser" Member="cpDepartment" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="cpDepartment" IsForeignKey="true" />
+      <Association Name="cpRole_cpUser" Member="cpRole" ThisKey="RoleID" OtherKey="RoleID" Type="cpRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.125, 9.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="d8321cf7-424b-4d52-9c37-8ae7228fa3b4" absoluteBounds="5.5, 2.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses1DataContext/cpRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce1d5e5d-c21b-416c-a59d-2524566af076" absoluteBounds="5.515, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0a1f967-15d8-4913-a9ce-09b6a26faf92" absoluteBounds="10.875, 2.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/cpHolidayRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ec07622-738c-49ff-8d69-0577f3f3e823" absoluteBounds="10.89, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19b6e696-3f6c-43f4-ac29-e6b4e3dd6862" absoluteBounds="4.875, 7, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClasses1DataContext/cpHolidayEntitlement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2ddf2f8-f72f-4da9-ab46-47b8e9fbafab" absoluteBounds="4.89, 7.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef83eda4-3892-40a3-a9a0-04805c063fb2" absoluteBounds="13.875, 8, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses1DataContext/cpDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10242fe6-5ac8-4247-b254-da87f6020839" absoluteBounds="13.89, 8.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0317a8cc-b5b9-49a7-a1de-3e01be10d917" absoluteBounds="8.375, 4.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataClasses1DataContext/cpUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa5cac94-5205-4862-a90b-fc11d5195f2e" absoluteBounds="8.39, 5.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.375 : 4.75); (9.375 : 3.13544840494792); (10.875 : 3.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/cpUser/cpUser_cpHolidayRequest" />
+      <nodes>
+        <classShapeMoniker Id="0317a8cc-b5b9-49a7-a1de-3e01be10d917" />
+        <classShapeMoniker Id="f0a1f967-15d8-4913-a9ce-09b6a26faf92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 7.33735270182292); (6.875 : 7.33735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/cpUser/cpUser_cpHolidayEntitlement" />
+      <nodes>
+        <classShapeMoniker Id="0317a8cc-b5b9-49a7-a1de-3e01be10d917" />
+        <classShapeMoniker Id="19b6e696-3f6c-43f4-ac29-e6b4e3dd6862" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 8.59699625651042); (9.375 : 8.59699625651042); (9.375 : 7.67470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/cpDepartment/cpDepartment_cpUser" />
+      <nodes>
+        <classShapeMoniker Id="ef83eda4-3892-40a3-a9a0-04805c063fb2" />
+        <classShapeMoniker Id="0317a8cc-b5b9-49a7-a1de-3e01be10d917" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.21875 : 3.44399251302083); (7.21875 : 5.84375); (8.375 : 5.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/cpRole/cpRole_cpUser" />
+      <nodes>
+        <classShapeMoniker Id="d8321cf7-424b-4d52-9c37-8ae7228fa3b4" />
+        <classShapeMoniker Id="0317a8cc-b5b9-49a7-a1de-3e01be10d917" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

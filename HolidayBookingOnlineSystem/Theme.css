@@ -1,0 +1,64 @@
+﻿.LoginPanel {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #dadada;
+    height: 425px;
+    width: 450px;
+}
+
+.HolidayRequestPanel {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #dadada;
+    height: 1260px;
+    width: 650px;
+}
+
+.Label {
+    font-family: Verdana;
+    color: black;
+}
+
+.Label2 {
+    font-family: Verdana;
+    color: white;
+}
+
+.ValidationLabel {
+    font-family: Verdana;
+    color: red;
+}
+
+.TextBox {
+    font-family: Verdana;
+    border: 2px solid #dadada;
+    border-radius: 5px;
+    align-content: center;
+    height: 20px;
+    width: 200px;
+}
+
+.TextBox:focus {
+    outline: none;
+    border-color: lightskyblue;
+    box-shadow: 0 0 5px lightskyblue;
+}
+
+.Button {
+    border-style: none;
+    border-color: inherit;
+    border-radius: 5px;
+    background-color: #000000;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+    height: 35px;
+    width: 150px;
+}
+
+.Button:hover {
+    outline: none;
+    border-color: lightskyblue;
+    box-shadow: 0 0 10px lightskyblue;
+}
+
